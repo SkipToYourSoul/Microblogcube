@@ -1,0 +1,5 @@
+queue:
+
+- name: crawl
+  rate: 1/s
+ 

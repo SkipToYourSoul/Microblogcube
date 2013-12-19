@@ -1,0 +1,32 @@
+application: zqyoauth
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /callback.*
+  script: callback.application
+  
+- url: /signin.*
+  script: signin.application
+
+- url: /crawl.*
+  script: crawl.application
+ 
+- url: /userinfo/.*
+  script: userinfo.application
+   
+- url: /welcome
+  script: index.application
+
+- url: /test
+  script: test.application
+
+- url: /backendworker.*
+  script: crawltask.application
+
+- url: /test/storage.*
+  script: storagetest.application
+
+

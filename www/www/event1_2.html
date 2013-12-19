@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html class="no-js" lang='zh-CN'>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width">
+<title>传播过程</title>
+<link rel="stylesheet" type="text/css" href="style/header.css" />
+<link rel="stylesheet" type="text/css" href="style/emain.css" />
+<link rel="stylesheet" type="text/css" href="style/nav.css" />
+<link rel="stylesheet" type="text/css" href="style/footer.css" />
+<script type="text/javascript">
+	var redirect = true;
+</script>
+<script type="text/javascript" src="js/parseurl.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/nav.js"></script>
+<!--link the css-->
+<link href="./sigmaltest/css" rel="stylesheet" type="text/css">
+<!--<link rel="icon" type="image/png" href="http://sigmajs.org/examples/favicon.ico">
+    &lt;!&ndash;[if IE]><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /><![endif]&ndash;&gt;-->
+
+<link rel="stylesheet"
+	href="http://sigmajs.org/css/bootstrap-responsive.min.css">
+<link rel="stylesheet" href="http://sigmajs.org/css/style.css">
+<link rel="stylesheet" href="http://sigmajs.org/css/prettify.css">
+
+<!--load the google api-->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+	google.load('visualization', '1', {
+		packages : [ 'corechart' ]
+	});
+</script>
+<!--load the js file-->
+<script src="js/event1_2JS/prettify.js"></script>
+<script src="js/event1_2JS/sigma.min.js"></script>
+<script src="js/event1_2JS/sigmal.js"></script>
+<script src="js/event1_2JS/sigma.forceatlas2.js"></script>
+<script src="js/event1_2JS/jquery-1.10.2.min.js"></script>
+<script src='js/event1_2JS/jquery.json.js'></script>
+
+<link rel="stylesheet" type="text/css" href="style/weibo.css" />
+</head>
+<body style="padding: 0; margin: 0;" onload="prettyPrint();"
+	screen_capture_injected="true">
+
+	<div id="header">
+		<div id="header_info">
+			<div id="header_logo">
+				<a href="index.html"><img src="img/headerlogo.png" height="70px"
+					width="200px" alt="logo" /></a>
+			</div>
+			<div id="header_other">
+				<div id="search_bar">
+					<form id="search" action="search.html" method="get">
+						<input id="sinput" type='text' name="q" /> <input id="sbtn"
+							type="submit" value="搜索" name='btnG' />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="main">
+		<div id="main_info">
+			<div id="nav">
+				<div id="nav_home" class="nav_element">
+					<a href="index.html"><img src="img/nav_home_selected.jpg"
+						alt="home" border=0 height=40 width=40></a>
+				</div>
+				<div id="nav_back" class="nav_element">
+					<a href="#"><img src="img/nav_back.jpg" alt="back" border=0
+						height=40 width=40></a>
+				</div>
+				<div id="nav_space"></div>
+				<div id="nav_info" class="nav_element">
+					<a><img src="img/nav_info.jpg" alt="info" border=0 height=40
+						width=40></a>
+				</div>
+				<div id="nav_trans" class="nav_selected">
+					<a><img src="img/nav_trans.jpg" alt="trans" border=0 height=40
+						width=40></a>
+				</div>
+				<div id="nav_emo" class="nav_element">
+					<a><img src="img/nav_emo.jpg" alt="emo" border=0 height=40
+						width=40></a>
+				</div>
+				<div id="nav_map" class="nav_element">
+					<a><img src="img/nav_map.jpg" alt="map" border=0 height=40
+						width=40></a>
+				</div>
+			</div>
+
+			<div id="chart_big">
+
+				<div class="container">
+					<h2 class="span12" id="post-title">传播过程</h2>
+					<div class="span12 buttons-container">
+						<button class="btn" id="stop-layout">Stop Layout</button>
+						<button class="btn" id="rescale-graph">Rescale Graph</button>
+					</div>
+					<div>
+						<div class="span12 sigma-parent" id="sigma-example-parent">
+							<div class="sigma-expand" id="sigma-example"></div>
+						</div>
+						<br>
+						<div class="span12" id="filter_div"></div>
+					</div>
+				</div>
+
+			</div>
+			<div id="chart_small">
+
+				<div style="margin: 5px;">
+					<a href="http://weibo.com"
+						style="font-family: '微软雅黑'; font-size: 14px; font-weight: bold; text-decoration: none; color: black;"><img
+						src="img/weibologo.png" width=20 height=20 align="left" border=0 />新浪微博:</a>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+	<div id="footer">
+		<div id="footer_info">
+			<div id="footer_logo">
+				<img src="img/footerlogo.png" alt="logo" />
+			</div>
+			<div id="footer_words">
+				<p>
+					Copyright © 2013- East China Normal University&nbsp;<a
+						href="http://database.ecnu.edu.cn/">Center for Cloud Computing
+						and Big Data</a>. All rights reserved.</br> 版权所有:华东师范大学&nbsp;<a
+						href="http://database.ecnu.edu.cn/">云计算与大数据研究中心</a>.</br>
+				</p>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript">
+		if (document.addEventListener) {
+			document.addEventListener('DOMContentLoaded', init, false);
+		} else {
+			window.onload = init;
+		}
+	</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+<style type="text/css">
+.sigma-parent {
+	position: relative;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	background: #000000;
+	height: 500px;
+	width: 1000px;
+}
+
+.sigma-expand {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.buttons-container {
+	padding-bottom: 8px;
+	padding-top: 12px;
+}
+</style>
+<style type="text/css" media="all">
+body {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+</style>

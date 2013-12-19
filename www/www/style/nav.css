@@ -1,0 +1,53 @@
+#nav{
+    position:fixed ;
+    width: 50px;
+    top:90px;
+    margin: 0;
+    padding: 0;
+}
+#nav *{
+    float:left;
+}
+.nav_element{
+    height:40px;
+    width:40px;
+    margin: 3px;
+    padding:2px;
+}
+.nav_selected{
+    height:40px;
+    width:40px;
+    margin: 1px;
+    padding:1px;
+    border: black 3px solid;
+}
+
+#nav_space{
+    width:50px;
+    height:60px;
+}
+
+
+.nav{
+    height:40px;
+    width:40px;
+    margin: 2px;
+    padding:2px;
+}
+
+
+#space
+{
+    width:40px;
+    height:60px;
+    padding:0;
+    margin: 0;
+}
+
+#nav4
+{
+    margin: 2px;
+    border: solid;
+    padding:0px;
+    border-width: 3px;
+}

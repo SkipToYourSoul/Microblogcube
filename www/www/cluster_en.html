@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Personal Community Detection</title>
+<link rel="stylesheet" type="text/css" href="style/header.css" />
+<link rel="stylesheet" type="text/css" href="style/main.css" />
+<link rel="stylesheet" type="text/css" href="style/emain.css" />
+<link rel="stylesheet" type="text/css" href="style/nav.css" />
+<link rel="stylesheet" type="text/css" href="style/footer.css" />
+<link rel="stylesheet" type="text/css" href="style/sigma.css" />
+<link rel="stylesheet" type="text/css" href="style/psocial.css" />
+
+<!--load the js file-->
+<script type="text/javascript">
+	var redirect = false;
+</script>
+<script src="js/parseurl.js"></script>
+<script src="js/config.js"></script>
+<script src="js/event1_2JS/cluster.js"></script>
+<script src="js/event1_2JS/prettify.js"></script>
+<script src="js/event1_2JS/sigma.min.js"></script>
+<script src="js/event1_2JS/sigma.forceatlas2.js"></script>
+<script src="js/event1_2JS/jquery-1.10.2.min.js"></script>
+<script src='js/event1_2JS/jquery.json.js'></script>
+<script type="text/javascript">
+	$(document).ready(init);
+</script>
+<link rel="stylesheet"
+	href="http://sigmajs.org/css/bootstrap-responsive.min.css">
+<link rel="stylesheet" href="http://sigmajs.org/css/style.css">
+<link rel="stylesheet" href="http://sigmajs.org/css/prettify.css">
+</head>
+<body style="padding: 0; margin: 0;">
+	<div id="header">
+		<div id="header_info">
+			<div id="header_logo">
+				<a href="index.html"><img src="img/headerlogo.png" height="70px"
+					width="200px" alt="logo" /></a>
+			</div>
+			<div id="header_other">
+				<div id="search_bar">
+					<form id="search" action="index.html" method="get">
+						<input id="sinput" type='text' name="q" /> <input id="sbtn"
+							type="submit" value="search" name='btnG' />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="main">
+		<div id="main_info">
+			<div id="chart_big">
+				<p>Personal Community Detection</p>
+				<div class="span12 buttons-container">
+					<input type="button" value="Detect" onclick="drawComm()" /> <input
+						type="button" value="Stop Layout" id="stop-layout" /> <input
+						type="button" value="Centering" id="rescale-graph" /> <label
+						style="font-size: 14px">Expected Community Number: </label><input type="text"
+						value="5" id="min_cut_num" style="width: 30px" />
+					<div id="datastate"
+						style='color: black; font-family: "微软雅黑"; font-size: 14px; width: "50px"; float: "left";'></div>
+				</div>
+				<div class="span12 sigma-parent" id="sigma-example-parent">
+					<div class="sigma-expand" id="sigma-example"></div>
+				</div>
+			</div>
+			<div id="chart_small">
+				<a id="signin"><img src="img/signin.png"
+					style="width: 170px; height: 30px; padding-left: 5px" /></a> <input
+					type="button" id="logout" value="logout" />
+				<div class="smallpanel">
+					<div class="sp_header">User Profile</div>
+					<div class="sp_body" id="uinfo">Please Login</div>
+					<br />
+				</div>
+				<div class="smallpanel">
+					<div class="sp_header">Detected Communities</div>
+					<div class="sp_body" id="clusters"></div>
+					<br />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer">
+		<div id="footer_info">
+			<div id="footer_logo">
+				<img src="img/footerlogo.png" alt="logo" />
+			</div>
+			<div id="footer_words">
+				<p>
+					Copyright © 2013- East China Normal University&nbsp;<a
+						href="http://database.ecnu.edu.cn/">Center for Cloud Computing
+						and Big Data</a>. All rights reserved.</br> 版权所有:华东师范大学&nbsp;<a
+						href="http://database.ecnu.edu.cn/">云计算与大数据研究中心</a>.</br>
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+
+<style type="text/css" media="all">
+body {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+</style>
+</html>

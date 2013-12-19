@@ -1,0 +1,6 @@
+fusion table数据是属于用户的个人数据，因此访问是需要用户的授权的。
+1. 开通fusion table api:
+进入https://code.google.com/apis/console/，第一次需要先create project.
+在service里面找到fusion table，开机开通按钮。
+2. 在api access里面
+create new brower,在网址部分写：microblogcube.appspot.com/*。

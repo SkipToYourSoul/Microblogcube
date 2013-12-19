@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>情绪走势</title>
+<link rel="stylesheet" type="text/css" href="style/header.css" />
+<link rel="stylesheet" type="text/css" href="style/emain.css" />
+<link rel="stylesheet" type="text/css" href="style/nav.css" />
+<link rel="stylesheet" type="text/css" href="style/footer.css" />
+<link rel="stylesheet" type="text/css" href="style/weibo.css" />
+<script type="text/javascript">
+	var redirect = true;
+</script>
+<script type="text/javascript" src="js/parseurl.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/dataTableAdapter.js"></script>
+<script type="text/javascript" src="js/nav.js"></script>
+<script src="js/event1_3JS/d3.js"></script>
+<script src="js/event1_3JS/d3.layout.cloud.js"></script>
+<script type="text/javascript" src="js/event1_3JS/event1_3.js"></script>
+
+<script type="text/javascript" src="js/jquery.json.js"></script>
+<script type="text/javascript" src="js/dataparser.js"></script>
+
+</head>
+<body style="padding: 0; margin: 0;">
+
+	<div id="header">
+		<div id="header_info">
+			<div id="header_logo">
+				<a href="index.html"><img src="img/headerlogo.png" height="70px"
+					width="200px" alt="logo" /></a>
+			</div>
+			<div id="header_other">
+				<div id="search_bar">
+					<form id="search" action="search.html" method="get">
+						<input id="sinput" type='text' name="q" /> <input id="sbtn"
+							type="submit" value="搜索" name='btnG' />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="main">
+		<div id="main_info">
+			<div id="nav">
+				<div id="nav_home" class="nav_element">
+					<a href="index.html"><img src="img/nav_home_selected.jpg"
+						alt="home" border=0 height=40 width=40></a>
+				</div>
+				<div id="nav_back" class="nav_element">
+					<a href="#"><img src="img/nav_back.jpg" alt="back" border=0
+						height=40 width=40></a>
+				</div>
+				<div id="nav_space"></div>
+				<div id="nav_info" class="nav_element">
+					<a><img src="img/nav_info.jpg" alt="info" border=0 height=40
+						width=40></a>
+				</div>
+				<div id="nav_trans" class="nav_element">
+					<a><img src="img/nav_trans.jpg" alt="trans" border=0 height=40
+						width=40></a>
+				</div>
+				<div id="nav_emo" class="nav_selected">
+					<a><img src="img/nav_emo.jpg" alt="emo" border=0 height=40
+						width=40></a>
+				</div>
+				<div id="nav_map" class="nav_element">
+					<a><img src="img/nav_map.jpg" alt="map" border=0 height=40
+						width=40></a>
+				</div>
+			</div>
+			<div id="chart_big">
+
+				<div id="moodline" class="big_block"
+					style="width: 654px; height: 400px;">
+					<div id="moodline_title">
+						<h4 style="padding: 5px 5px 0 5px; margin: 0;">情绪走势</h4>
+					</div>
+					<div id="moodline_chart" style="width: 654px; height: 250px;">
+					</div>
+					<div id="moodline_filter" style="width: 654px; height: 100px;">
+					</div>
+				</div>
+
+				<div id="cloud" class="big_block" style="width: 654px;">
+
+					<div id="cloud_title">
+						<h4 style="padding: 5px 5px 0 5px; margin: 0;">热词云图</h4>
+					</div>
+					<div id="cloud_chart" style="width: 654px; height: 400px"></div>
+					<form id="form_keyword" keyaction="http://www.google.com.hk/search"
+						method=get target=_blank>
+						<p id="p_keyword">
+							<label for="keyword">关键词:</label> <input id="keyword" type='text'
+								name="as_q" value="" /> <input id="Go" type="submit" value="搜索"
+								name='btnG' onclick="kwsearch()" />
+						</p>
+					</form>
+				</div>
+
+
+			</div>
+			<div id="chart_small">
+
+				<div style="margin: 5px;">
+					<a href="http://weibo.com"
+						style="font-family: '微软雅黑'; font-size: 14px; font-weight: bold; text-decoration: none; color: black;"><img
+						src="img/weibologo.png" width=20 height=20 align="left" border=0 />新浪微博:</a>
+				</div>
+
+
+
+			</div>
+
+		</div>
+	</div>
+
+	<div id="footer">
+		<div id="footer_info">
+			<div id="footer_logo">
+				<img src="img/footerlogo.png" alt="logo" />
+			</div>
+			<div id="footer_words">
+				<p>
+					Copyright © 2013- East China Normal University&nbsp;<a
+						href="http://database.ecnu.edu.cn/">Center for Cloud Computing
+						and Big Data</a>. All rights reserved.</br> 版权所有:华东师范大学&nbsp;<a
+						href="http://database.ecnu.edu.cn/">云计算与大数据研究中心</a>.</br>
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

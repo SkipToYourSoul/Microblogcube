@@ -1,0 +1,67 @@
+#main{
+    width:100%;
+}
+#main_info{
+    margin-left: auto;
+    margin-right: auto;
+    width:1024px;
+}
+#chart_big{
+    margin-left: 50px;
+    float:left;
+    width:654px;
+}
+#chart_small{
+	margin-top:20px;
+    float:left;
+    width:320px;
+}
+
+.small_block{
+    width:320px;
+    margin:5px 0;
+    float:left;
+}
+
+.small_block*{float:left;}
+.big_block{
+    width:654px;
+    margin:5px 0;
+    float:left;
+}
+.big_block*{float:left}
+.small_in_big_block{
+    width:200px;
+    margin:5px 9px;
+    float:left;
+}
+
+
+.big_block*{float:left}
+.medium_in_big_block{
+    width:310px;
+    margin:5px 5px;
+    float:left;
+}
+
+
+.small_in_big_block*{float:left;}
+
+
+
+#sigma-example-parent
+{
+    width:600px;
+    height:500px;
+    border:solid 3px ;
+}
+
+#filter_div{
+    width:600px;
+}
+
+#p_keyword{
+    margin: 0;
+    padding-top: 0;
+    text-align:center;
+}

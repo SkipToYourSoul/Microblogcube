@@ -1,0 +1,5 @@
+<form enctype="multipart/form-data" method="POST" action="/upload">
+    {% csrf_token %}
+    <input type="file" name="your_file"/>
+    <input type="submit" value="上传文件" />
+</form>

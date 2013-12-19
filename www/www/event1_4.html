@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>地域</title>
+<link rel="stylesheet" type="text/css" href="style/header.css" />
+<link rel="stylesheet" type="text/css" href="style/emain.css" />
+<link rel="stylesheet" type="text/css" href="style/nav.css" />
+<link rel="stylesheet" type="text/css" href="style/footer.css" />
+<link rel="stylesheet" type="text/css" href="style/weibo.css" />
+<script type="text/javascript">
+	var redirect = true;
+</script>
+<script type="text/javascript" src="js/config.js"></script>
+<script type="text/javascript" src="js/parseurl.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.json.js"></script>
+<script type="text/javascript" src="js/nav.js"></script>
+<script type="text/javascript" src="js/event1_4.js"></script>
+<script type="text/javascript" src="js/dataparser.js"></script>
+
+<style type="text/css">
+body,ul,li {
+	margin: 0;
+	padding: 0;
+	font: 14px normal "微软雅黑", Arial, Helvetica, sans-serif;
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+	font-size: 14px;
+}
+
+#tabbox {
+	width: 600px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.tab_conbox {
+	border: 1px solid #999;
+	border-top: none;
+}
+
+.tab_con {
+	display: none;
+}
+
+.tabs {
+	height: 32px;
+	border-bottom: 1px solid #999;
+	border-left: 1px solid #999;
+	width: 100%;
+}
+
+.tabs li {
+	height: 31px;
+	line-height: 31px;
+	float: left;
+	border: 1px solid #999;
+	border-left: none;
+	margin-bottom: -1px;
+	background: #e0e0e0;
+	overflow: hidden;
+	position: relative;
+}
+
+.tabs li a {
+	display: block;
+	padding: 0 20px;
+	border: 1px solid #fff;
+	outline: none;
+}
+
+.tabs li a:hover {
+	background: #ccc;
+}
+
+.tabs .thistab,.tabs .thistab a:hover {
+	background: #fff;
+	border-bottom: 1px solid #fff;
+}
+
+.tab_con {
+	padding: 12px;
+	font-size: 14px;
+	line-height: 175%;
+}
+</style>
+
+<script type="text/javascript">
+	$(document).ready(
+			function() {
+				jQuery.jqtab = function(tabtit, tab_conbox, shijian) {
+					$(tab_conbox).find("li").hide();
+					$(tabtit).find("li:first").addClass("thistab").show();
+					$(tab_conbox).find("li:first").show();
+
+					$(tabtit).find("li").bind(
+							shijian,
+							function() {
+								$(this).addClass("thistab").siblings("li")
+										.removeClass("thistab");
+								var activeindex = $(tabtit).find("li").index(
+										this);
+								$(tab_conbox).children().eq(activeindex).show()
+										.siblings().hide();
+								tabDrawFunc[activeindex]();
+								return false;
+							});
+
+				};
+				/*调用方法如下：*/
+				$.jqtab("#tabs", "#tab_conbox", "click");
+
+				//$.jqtab("#tabs2","#tab_conbox2","mouseenter");
+
+			});
+</script>
+
+</head>
+<body style="padding: 0; margin: 0;">
+
+	<div id="header">
+		<div id="header_info">
+			<div id="header_logo">
+				<a href="index.html"><img src="img/headerlogo.png" height="70px"
+					width="200px" alt="logo" /></a>
+			</div>
+			<div id="header_other">
+				<div id="search_bar">
+					<form id="search" action="search.html" method="get">
+						<input id="sinput" type='text' name="q" /> <input id="sbtn"
+							type="submit" value="搜索" name='btnG' />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="main">
+		<div id="main_info">
+			<div id="nav">
+				<div id="nav_home" class="nav_element">
+					<a href="index.html"><img src="img/nav_home_selected.jpg"
+						alt="home" border=0 height=40 width=40></a>
+				</div>
+				<div id="nav_back" class="nav_element">
+					<a href="#"><img src="img/nav_back.jpg" alt="back" border=0
+						height=40 width=40></a>
+				</div>
+				<div id="nav_space"></div>
+				<div id="nav_info" class="nav_element">
+					<a><img src="img/nav_info.jpg" alt="info" border=0 height=40
+						width=40></a>
+				</div>
+				<div id="nav_trans" class="nav_element">
+					<a><img src="img/nav_trans.jpg" alt="trans" border=0 height=40
+						width=40></a>
+				</div>
+				<div id="nav_emo" class="nav_element">
+					<a><img src="img/nav_emo.jpg" alt="emo" border=0 height=40
+						width=40></a>
+				</div>
+				<div id="nav_map" class="nav_selected">
+					<a><img src="img/nav_map.jpg" alt="map" border=0 height=40
+						width=40></a>
+				</div>
+			</div>
+			<div id="chart_big">
+
+				<div id="map" class="big_block" style="width: 654px;">
+					<div id="map_title">
+						<h4 style="padding: 5px 5px 0 5px; margin: 0;">地域</h4>
+					</div>
+					<div id="map_chart" style="width: 654px"></div>
+				</div>
+
+				<!--new code-->
+				<div id="tabbox">
+
+					<ul class="tabs" id="tabs">
+						<li class="thistab">转发量分布</li>
+						<li class="">z-score</li>
+					</ul>
+
+					<ul class="tab_conbox" id="tab_conbox">
+						<li class="tab_con" style="display: none;">
+							<p id="bar" class="big_block" style="width: 654px;">
+							<div id="bar_control"></div>
+							<div id="bar_chart" style="height: 700px"></div>
+							</p>
+						</li>
+
+						<li class="tab_con" style="display: none;">
+							<p id="bar2" class="big_block" style="width: 654px;">
+							<div id="bar_control2"></div>
+							<div id="bar_chart2" style="height: 700px"></div>
+							</p>
+						</li>
+					</ul>
+
+				</div>
+				<!--end new code-->
+
+			</div>
+			<div id="chart_small">
+
+				<div style="margin: 5px;">
+					<a href="http://weibo.com"
+						style="font-family: '微软雅黑'; font-size: 14px; font-weight: bold; text-decoration: none; color: black;"><img
+						src="img/weibologo.png" width=20 height=20 align="left" border=0 />新浪微博:</a>
+				</div>
+
+
+
+
+			</div>
+
+		</div>
+	</div>
+
+	<div id="footer">
+		<div id="footer_info">
+			<div id="footer_logo">
+				<img src="img/footerlogo.png" alt="logo" />
+			</div>
+			<div id="footer_words">
+				<p>
+					Copyright © 2013- East China Normal University&nbsp;<a
+						href="http://database.ecnu.edu.cn/">Center for Cloud Computing
+						and Big Data</a>. All rights reserved.</br> 版权所有:华东师范大学&nbsp;<a
+						href="http://database.ecnu.edu.cn/">云计算与大数据研究中心</a>.</br>
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

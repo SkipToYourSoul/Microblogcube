@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>事件发展过程</title>
+<link rel="stylesheet" type="text/css" href="style/header.css" />
+<link rel="stylesheet" type="text/css" href="style/emain.css" />
+<link rel="stylesheet" type="text/css" href="style/nav.css" />
+<link rel="stylesheet" type="text/css" href="style/footer.css" />
+<link rel="stylesheet" type="text/css" href="style/weibo.css" />
+<script type="text/javascript">
+	var redirect = true;
+</script>
+<script type="text/javascript" src="js/config.js"></script>
+<script type="text/javascript" src="js/parseurl.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/event1_2JS/jquery.json.js"></script>
+
+<script type="text/javascript" src="js/nav.js"></script>
+<script type="text/javascript" src="js/event1_1.js"></script>
+<script type="text/javascript" src="js/dataparser.js"></script>
+</head>
+<body style="padding: 0; margin: 0;">
+
+	<div id="header">
+		<div id="header_info">
+			<div id="header_logo">
+				<a href="index.html"><img src="img/headerlogo.png" height="70px"
+					width="200px" alt="logo" /></a>
+			</div>
+			<div id="header_other">
+				<div id="search_bar">
+					<form id="search" action="search.html" method="get">
+						<input id="sinput" type='text' name="q" /> <input id="sbtn"
+							type="submit" value="搜索" name='btnG' />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="main">
+		<div id="main_info">
+			<div id="nav">
+				<div id="nav_home" class="nav_element">
+					<a href="index.html"><img src="img/nav_home_selected.jpg"
+						alt="home" border=0 height=40 width=40></a>
+				</div>
+				<div id="nav_back" class="nav_element">
+					<a href="#"><img src="img/nav_back.jpg" alt="back" border=0
+						height=40 width=40></a>
+				</div>
+				<div id="nav_space"></div>
+				<div id="nav_info" class="nav_selected">
+					<a><img src="img/nav_info.jpg" alt="info" border=0 height=40
+						width=40></a>
+				</div>
+				<div id="nav_trans" class="nav_element">
+					<a><img src="img/nav_trans.jpg" alt="trans" border=0 height=40
+						width=40></a>
+				</div>
+				<div id="nav_emo" class="nav_element">
+					<a><img src="img/nav_emo.jpg" alt="emo" border=0 height=40
+						width=40></a>
+				</div>
+				<div id="nav_map" class="nav_element">
+					<a><img src="img/nav_map.jpg" alt="map" border=0 height=40
+						width=40></a>
+				</div>
+			</div>
+			<div id="chart_big">
+
+				<div id="processdure" class="big_block"
+					style="width: 654px; height: 400px;">
+					<div id="processdure_title">
+						<h4 style="padding: 5px 5px 0 5px; margin: 0;">事件发展过程</h4>
+					</div>
+					<div id="processdure_chart" style="width: 654px; height: 250px;">
+					</div>
+					<div id="processdure_filter" style="width: 654px; height: 100px;">
+					</div>
+				</div>
+
+
+				<div id="concern" class="medium_in_big_block">
+					<div id="concern_title">
+						<h4 style="padding: 5px 5px 0 5px; margin: 0;">关注分布</h4>
+					</div>
+					<div id="concern_chart"></div>
+				</div>
+
+				<div id="fans" class="medium_in_big_block">
+					<div id="fans_title">
+						<h4 style="padding: 5px 5px 0 5px; margin: 0;">粉丝分布</h4>
+					</div>
+					<div id="fans_chart"></div>
+				</div>
+
+				<div id="publish" class="medium_in_big_block">
+					<div id="publish_title">
+						<h4 style="padding: 5px 5px 0 5px; margin: 0;">发布分布</h4>
+					</div>
+					<div id="publish_chart"></div>
+				</div>
+
+
+
+
+				<div id="collect" class="medium_in_big_block">
+					<div id="collect_title">
+						<h4 style="padding: 5px 5px 0 5px; margin: 0;">收藏分布</h4>
+					</div>
+					<div id="collect_chart"></div>
+				</div>
+
+
+				<div id="client" class="small_in_big_block">
+					<div id="client_title">
+						<h4 style="padding: 5px 5px 0 5px; margin: 0;">客户端分布</h4>
+					</div>
+					<div id="client_chart"></div>
+				</div>
+
+				<div id="clientType" class="small_in_big_block">
+					<div id="clientType_title">
+						<h4 style="padding: 5px 5px 0 5px; margin: 0;">用户类型</h4>
+					</div>
+					<div id="clientType_chart"></div>
+				</div>
+
+				<div id="sex" class="small_in_big_block">
+					<div id="sex_title">
+						<h4 style="padding: 5px 5px 0 5px; margin: 0;">男女比例</h4>
+					</div>
+					<div id="sex_chart"></div>
+				</div>
+
+
+
+
+
+
+			</div>
+			<div id="chart_small"></div>
+
+		</div>
+	</div>
+
+	<div id="footer">
+		<div id="footer_info">
+			<div id="footer_logo">
+				<img src="img/footerlogo.png" alt="logo" />
+			</div>
+			<div id="footer_words">
+				<p>
+					Copyright © 2013- East China Normal University&nbsp;<a
+						href="http://database.ecnu.edu.cn/">Center for Cloud Computing
+						and Big Data</a>. All rights reserved.</br> 版权所有:华东师范大学&nbsp;<a
+						href="http://database.ecnu.edu.cn/">云计算与大数据研究中心</a>.</br>
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

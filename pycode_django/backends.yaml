@@ -1,0 +1,6 @@
+backends:
+
+- name: crawlbackend
+  instances: 1
+  start: crawltask.py
+  options: dynamic

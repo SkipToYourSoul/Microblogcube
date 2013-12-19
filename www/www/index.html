@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="style/header.css" />
+    <link rel="stylesheet" type="text/css" href="style/main.css" />
+    <link rel="stylesheet" type="text/css" href="style/brief.css" />
+    <link rel="stylesheet" type="text/css" href="style/footer.css" />
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="js/config.js"></script>
+    <script type="text/javascript" src="js/parseurl.js"></script>
+    <script type="text/javascript" src="js/dataTableAdapter.js"></script>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+	
+	<!-- indexMap -->
+	<link type="text/css" href="style/indexMap.css" rel="stylesheet" />
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+	<script type="text/javascript" src="js/map/indexMap.js"></script>
+	<!-- indexControl -->
+	<link type="text/css" href="style/indexControl.css" rel="stylesheet" />
+	<script src="js/control/jquery-1.7.1.min.js"></script>
+    <script src="js/control/jquery-ui-1.8.16.custom.min.js"></script>
+	<script src="js/control/jquery.mousewheel.min.js"></script>
+	<script src="js/control/jQAllRangeSliders-withRuler-min.js"></script>
+	<script src="js/control/indexControl.js"></script>
+	
+</head>
+<body style="padding:0;margin: 0;">
+
+<div id="header" >
+    <div id="header_info">
+        <div id="header_logo">
+            <img src="img/headerlogo.png" height="70px" width="200px" alt="logo"/>
+        </div>
+        <div id="header_other">
+            <div id="search_bar">
+                <form id="search" action="search.html" method="get">
+                    <input id="sinput" type='text' name="q" />
+                    <input id="sbtn" type="submit" value="搜索" name='btnG'/>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="main">
+	<div id="map">
+		<div id="map_canvas" class="line"></div>
+	</div>
+	<div id="date_slider"></div>
+	<div id="controlButtons" class="button-group">
+	<input  type="button" 
+			id="lockButton"
+			value="lockTheControl"
+			style="background:transparent;
+				   border:2px solid #778899;
+				   border-bottom:2px solid #778899;
+				   color:#7B68EE;
+				   fontSize:12px;
+				   width:150px;
+				   "
+		    onmouseover="this.style.backgroundColor= '#778899'"
+			onmouseout="this.style.backgroundColor='white'"
+			>
+	<input  type="button" 
+			id="recoverButton"
+			value="recoverTheControl"
+			style="background:transparent;
+				   border:2px solid #778899;
+				   border-bottom:2px solid #778899;
+				   color:#7B68EE;
+				   fontSize:12px;
+				   width:150px;
+				   "
+		    onmouseover="this.style.backgroundColor= '#778899'"
+			onmouseout="this.style.backgroundColor='white'"
+			>
+	<input  type="button" 
+			id="zoomInButton"
+			value="Go Check 2010"
+			style="background:transparent;
+				   border:02px solid #778899;
+				   color:#7B68EE;
+				   fontSize:12px;
+				   width:150px;
+				   "
+		    onmouseover="this.style.backgroundColor= '#778899'"
+			onmouseout="this.style.backgroundColor='white'"
+			>
+	<input  type="button" 
+			id="zoomOutButton"
+			value="Go Check 2011"
+			style="background:transparent;
+				   border:02px solid #778899;
+				   color:#7B68EE;
+				   fontSize:12px;
+				   width:150px;
+				   "
+		    onmouseover="this.style.backgroundColor= '#778899'"
+			onmouseout="this.style.backgroundColor='white'"
+			>
+	</div>
+    <div id="main_info">
+    </div>
+	<!--
+	<div id="moreEvent">
+		<p><a href="http://database.ecnu.edu.cn/">所有事件</p>
+	</div>
+	-->
+</div>
+<div id="footer" >
+    <div id="footer_info">
+        <div id="footer_logo">
+            <img src="img/footerlogo.png" alt="logo"/>
+        </div>
+        <div id="footer_words">
+            <p>Copyright © 2013-  East China Normal
+                University&nbsp;<a href="http://database.ecnu.edu.cn/">Center
+                for Cloud Computing and Big Data</a>. All rights reserved.</br>
+                版权所有:华东师范大学&nbsp;<a href="http://database.ecnu.edu.cn/">云计算与大数据研究中心</a>.</br>
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
